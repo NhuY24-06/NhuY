@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home_NhuYLeHa</title>
+    <style>
+        .body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .header {
+            background-color: #999999;
+            text-align: center;
+            padding: 3px 0;
+            color:white;
+        }
+        .banner {
+            text-align: center;
+            background-color: #ccc;
+            padding: 0;
+            overflow: hidden; /* Tránh ảnh bị tràn */
+        }
+
+        .banner-img {
+            width: 100%; 
+            height: 300px; /* Cố định chiều cao */
+            object-fit: cover; /* Cắt ảnh để vừa khung mà không bị méo */
+            display: block;
+        }
+        
+        .nav {
+            background-color: #E6E6FA;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: #6699CC;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-top: 5px solid #FFFFCC;
+        }
+        .nav a:hover {
+            background-color: #CCCCFF;
+            color: white;
+            text-decoration: underline;
+        }
+        .phancuoi {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .left-column {
+            border-top: 5px solid #FFFFCC;
+            background-color: #999999	;
+            flex: 3;
+            padding: 10px 20px 10px 10px;
+        }
+        .gioithieu {
+            display: flex; /* Căn giữa ảnh */
+            justify-content: center;
+            align-items: center;
+            background: none; /* Xóa nền xám nếu có */
+        }
+
+        .gioithieu img {
+            width: 100%;  /* Ảnh sẽ tự động co giãn theo khung */
+            max-width: 100%; /* Đảm bảo ảnh không bị to hơn khung */
+            height: auto; /* Giữ tỷ lệ ảnh */
+            display: block;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gioithieu img:hover {
+            transform: scale(1.05); /* Hiệu ứng zoom khi di chuột vào */
+        }
+        .coban {
+            padding: 20px;
+            background-color: #CCFFCC;
+            margin:20px 10px 10px 0px;
+        }
+        .right-column {
+            border-top: 5px solid #FFFFCC;
+            background-color: #999999;
+            flex: 7;
+            padding: 20px;
+            margin-left: 1px;
+        }
+        .mota {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+        }
+        .footer {
+            text-align: left;
+            background-color: #999999;
+            padding: 20px;
+            width: 100%;
+            border-left: 10px solid #FFFFCC;
+            border-top: 5px solid #FFFFCC;
+            border-radius: 0px 0px 0px 10px;
+        }
+        @media screen and (max-width: 600px) {
+            .phancuoi .column {
+                flex: 100%;
+            }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .marquee-text {
+            font-size: 15px;
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+
+        /*Bài viết hiển thị chi tiết*/
+        details {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+        details[open] {
+            background-color: #333;
+        }
+
+        /*9 ảnh dạng grid*/
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột */
+            gap: 10px; /* Khoảng cách giữa các ảnh */
+            padding: 10px;
+            background-color: #999999;
+            border: 2px solid #FFFFCC;
+            margin: 10px 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            background-color: gray;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 200px; /* Đảm bảo kích thước đồng đều */
+            object-fit: cover; /* Cắt ảnh để vừa với khung */
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1); /* Hiệu ứng zoom khi di chuột vào */
+        }
+        iframe {
+            width: 100%;
+            height: 1500px;
+            min-height: 600px; /* Tăng chiều cao tối thiểu */
+            border: none;
+            overflow: auto;
+        }
+
+
+    </style>
+</head>
+<body class="body">
+
+    <div class="phancuoi">
+        <div class="left-column">
+            <h2>Về tôi</h2>
+            <p><b>Hình ảnh của tôi:</b></p>
+            <div class="gioithieu">
+                <img src="images/17.jpg" alt="Ảnh của tôi" style="width: 100%; max-width: 400px;">
+            </div>
+            <p>Hải Châu, Đà Nẵng</p>
+
+            <h3>Gallery</h3>
+            <p>Một số hình ảnh:</p>
+            <div class="gallery">
+                <img src="images/11.jpg" alt="Hình 1">
+                <img src="images/12.jpg" alt="Hình 2">
+                <img src="images/13.jpg" alt="Hình 3">
+                <img src="images/14.jpg" alt="Hình 4">
+                <img src="images/15.jpg" alt="Hình 5">
+                <img src="images/16.jpg" alt="Hình 6">
+                <img src="images/17.jpg" alt="Hình 7">
+                <img src="images/18.jpg" alt="Hình 8">
+                <img src="images/20.jpg" alt="Hình 9">
+            </div> 
+        </div>
+
+        <div class="right-column">
+            <div class="article">
+                <h2>Động lực thúc đẩy ông Putin đề xuất hợp tác khoáng sản với Mỹ</h2>
+                <p><b>Thứ tư, 26/2/2025, 11:11 (GMT+7).</b></p>
+                <div class="mota">
+                    <img src="images/29.jpg" alt="Ảnh putin" style="width: 100%; height: auto;">
+                </div>
+                <details>
+                    <summary>Xem thêm...</summary>
+                    <p>- Ông Putin dường như muốn loại bỏ "át chủ bài" khoáng sản của Ukraine, khi tuyên bố Nga cũng sẵn sàng hợp tác với Mỹ khai thác nguồn tài nguyên này.</p>
+                    <p>- Tổng thống Vladimir Putin ngày 24/2 họp với các bộ trưởng và cố vấn kinh tế quốc gia để thảo luận về sản xuất đất hiếm, tài nguyên được mô tả là nguồn dự trữ chiến lược để phát triển kinh tế và duy trì sức cạnh tranh của Nga trong tương lai.</p>
+                </details>
+            </div>
+
+            <br>
+
+            <div class="article">
+                <h2>Một số nét về bản thân </h2>
+                <p><b>Thứ tư, 26/2/2025, 18:46 (GMT+7).</b></p>
+                <div class="mota">
+                <img src="images/31.jpg " alt="Ảnh chân dung" style="width: 400px; height: 535px; display: flex; margin: auto; border-radius: 10px;" >
+            </div>
+            <details>
+                <summary>Xem thêm...</summary>
+                <p>Tôi tên là Lê Hà Như Ý, sinh ra và lớn lên tại Đà Nẵng, Hiện tại, tôi đang là sinh viên Cao Đẵng FPT Polytechnic. Từ nhỏ, tôi đã có đam mê, và niềm đam mê này đã thúc đẩy tôi theo đuổi chuyên ngành. Trong quá trình học tập và làm việc, tôi đã tích lũy được nhiều kinh nghiệm và kỹ năng quý báu.   
+                    Ngoài công việc, tôi rất thích đọc sách, du lịch. Tôi tin rằng việc duy trì và phát triển các sở thích cá nhân giúp tôi cân bằng cuộc sống và mở rộng tầm nhìn.
+                </p>
+            </details>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment WEB1013</title>
+    <style>
+        .body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: pink;
+        }
+        .header {
+            background-color: #FFC0CB;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .banner {
+            text-align: center;
+            background-color: #F08080;
+            
+            color: white;
+        }
+        .nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: pink;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-top: 5px solid pink;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .phancuoi {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .left-column {
+            border: 5px solid pink;
+            background-color: #333;
+            flex: 3;
+            padding: 10px 20px 10px 10px;
+        }
+        .gioithieu {
+            display: flex; /* Căn giữa ảnh */
+            justify-content: center;
+            align-items: center;
+            background: none; /* Xóa nền xám nếu có */
+        }
+
+        .gioithieu img {
+            width: 100%;  /* Ảnh sẽ tự động co giãn theo khung */
+            max-width: 100%; /* Đảm bảo ảnh không bị to hơn khung */
+            height: auto; /* Giữ tỷ lệ ảnh */
+            display: block;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gioithieu img:hover {
+            transform: scale(1.05); /* Hiệu ứng zoom khi di chuột vào */
+        }
+        .coban {
+            padding: 20px;
+            background-color: #A9A9A9;
+            margin:20px 10px 10px 0px;
+        }
+        .right-column {
+            border: 5px solid pink;
+            background-color: #333;
+            flex: 7;
+            padding: 20px;
+            margin-left: 7px;
+        }
+        .mota {
+            background-color: #A9A9A9;
+            width: 100%;
+            max-width: 100%;
+            display: block;
+        }
+        .footer {
+            text-align: left;
+            background-color: #333;
+            padding: 20px;
+            width: 100%;
+            border-left: 10px solid lightblue ;
+            border-radius: 0px 0px 0px 10px;
+        }
+        @media screen and (max-width: 600px) {
+            .phancuoi .column {
+                flex: 100%;
+            }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .marquee-text {
+            font-size: 15px;
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+
+        /*Banner slide tự chạy ---------------------------------------------------------------------------------------------*/
+        .slideshow-container {
+            position: relative;
+            max-width: none;
+            margin: auto;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 270px;
+            
+        }
+
+        /* Hiệu ứng mờ dần */
+        .fade {
+            animation: fadeEffect 1.5s;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        /* Nút điều hướng */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s;
+            border-radius: 5px;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /*Bài viết hiển thị chi tiết*/
+        details {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+        details[open] {
+            background-color: #333;
+        }
+
+        /*9 ảnh dạng grid*/
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột */
+            gap: 10px; /* Khoảng cách giữa các ảnh */
+            padding: 10px;
+            background-color: #A9A9A9;
+            border: 5px solid pink;
+            margin: 10px 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            background-color: gray;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 200px; /* Đảm bảo kích thước đồng đều */
+            object-fit: cover; /* Cắt ảnh để vừa với khung */
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1); /* Hiệu ứng zoom khi di chuột vào */
+        }
+
+
+    </style>
+</head>
+<body class="body">
+    <div class="header"><b><p class="marquee-text" style="color: #333;">Người thành công luôn có lối đi riêng by NhatDuy</b></div>
+    <div class="banner">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-taobao-july-cool-sky-promotion-poster-banner-background-image_157029.jpg" alt="Slide 1">
+            </div>
+        <div class="slide fade">
+            <img src="https://png.pngtree.com/background/20210710/original/pngtree-ancient-style-beautiful-chinese-style-banner-picture-image_1006017.jpg" alt="Slide 2">
+        </div>
+        <div class="slide fade">
+            <img src="https://png.pngtree.com/thumb_back/fw800/background/20210115/pngtree-website-banner-abstract-purple-blue-gradient-background-image_519661.jpg" alt="Slide 3">
+            </div>
+            
+                <!-- Nút điều hướng -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+    </div>
+    
+    
+
+    <div class="nav">
+        <a href="/Assignment/Home.html">Trang chủ</a>
+        <a href="/Assignment/form.html">Thông tin</a>
+        <a href="/Assignment/blogs.html">Blogs</a>
+        <a href="/Assignment/ketqua.html">Kết quả học tập</a>
+        <a href="/Assignment/Gallery.html">Gallery</a>
+    </div>
+
+    <div class="phancuoi">
+        <div class="left-column">
+            <h2>Về tôi</h2>
+            <p><b>Hình ảnh của tôi:</b></p>
+            <div class="gioithieu">
+                <img src="/Assignment/images/D3AB721D-A92D-42D8-B48F-BBC9C094071F.jpeg" alt="Ảnh của tôi" style="width: 100%; max-width: 400px;">
+            </div>
+            <p>Bán đảo Sơn Trà, Đà Nẵng</p>
+
+            <h3>Gallery</h3>
+            <p>Một số hình ảnh:</p>
+            <div class="gallery">
+                <img src="/Assignment/images/1.jpg" alt="Hình 1">
+                <img src="/Assignment/images/2.jpg" alt="Hình 2">
+                <img src="/Assignment/images/3.jpg" alt="Hình 3">
+                <img src="/Assignment/images/4.jpg" alt="Hình 4">
+                <img src="/Assignment/images/5.jpg" alt="Hình 5">
+                <img src="/Assignment/images/6.png" alt="Hình 6">
+                <img src="/Assignment/images/7.jpg" alt="Hình 7">
+                <img src="/Assignment/images/8.jpg" alt="Hình 8">
+                <img src="/Assignment/images/9.jpg" alt="Hình 9">
+            </div> 
+        </div>
+
+        <div class="right-column">
+            <div class="article">
+                <h2>Ukraine sau hơn nghìn ngày chiến sự</h2>
+                <p><b>Thứ hai, 24/02/2025, 10:54 (GMT+7).</b></p>
+                <div class="mota">
+                    <img src="/Assignment/images/ảnh ukraine.jpg" alt="Ảnh chiến tranh" style="width: 100%; height: auto;">
+                </div>
+                <details>
+                    <summary>Chiến tranh xảy ra khốc liệt giữa Nga và Ukraine</summary>
+                    <p>Những chiếc xe bốc cháy cạnh tòa nhà bị hư hại do trúng rocket ở thành phố Kharkov, Ukraine ngày 23/1/2024.
+                        Nga tiến hành các cuộc tập kích quy mô lớn bằng tên lửa và máy bay không người lái vào hạ tầng năng lượng Ukraine, khiến hàng triệu người dân nước này sống trong cảnh tối tăm và lạnh lẽo vào mùa đông.
+                    </p>
+                </details>
+            </div>
+
+            <br>
+
+            <div class="article">
+                <h2>Bộ Chính trị yêu cầu nghiên cứu sáp nhập một số tỉnh thành</h2>
+                <p><b>Thứ tư, 19/2/2025, 13:13 (GMT+7).</b></p>
+                <div class="mota">
+                <img src="/Assignment/images/bac-ninh-5810-1652338455-17399-5129-6670-1739944926.jpg" alt="Ảnh thành phố" style="width: 100%; height: auto;">
+            </div>
+            <details>
+                <summary>Nghiên cứu sáp nhập một số tỉnh thành</summary>
+                <p>- Bộ Chính trị, Ban Bí thư yêu cầu Đảng ủy Chính phủ nghiên cứu định hướng sáp nhập một số đơn vị hành chính cấp tỉnh, bỏ cấp huyện và sắp xếp cấp xã.</p>
+                <p>- Theo kết luận số 126 về một số nội dung, nhiệm vụ tiếp tục sắp xếp, tinh gọn tổ chức bộ máy của hệ thống chính trị năm 2025, Bộ Chính trị, Ban Bí thư giao Đảng ủy Chính phủ chủ trì, phối hợp với Ban Tổ chức Trung ương, Đảng ủy Quốc hội, cấp ủy, tổ chức có liên quan nghiên cứu định hướng tiếp tục sắp xếp bỏ cấp hành chính trung gian (cấp huyện).</p>
+                <p>- Các cơ quan nghiên cứu xây dựng phương án tiếp tục sắp xếp cấp xã phù hợp với mô hình tổ chức mới; định hướng sáp nhập một số đơn vị hành chính cấp tỉnh; đề xuất chủ trương sửa đổi, bổ sung các quy định pháp luật, quy định của Đảng có liên quan. Công việc này phải báo cáo Bộ Chính trị trong quý III/2025.</p>
+                <p>- Chính quyền địa phương gồm ba cấp: Tỉnh (tỉnh, thành phố trực thuộc trung ương); huyện (quận, huyện, thị xã, thành phố thuộc tỉnh, thành phố thuộc thành phố trực thuộc trung ương) và xã (xã, phường, thị trấn). Việt Nam hiện có 63 đơn vị hành chính cấp tỉnh, trong đó có 57 tỉnh và 6 thành phố trực thuộc trung ương; 705 quận, huyện; 10.595 xã, phường.</p>
+            </details>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>Contacts</h2>
+        <p><b>Email:<a href="https://mail.google.com/mail/u/0/#inbox" style="color: pink;"> nhuyleha06@gmail.com</a></b></p>
+        <p><b>SĐT: 0788552448</b></p>
+        </b></p>
+        <p><b>Địa chỉ: K342/120 Hoàng Văn Thái , Liên Chiểu, Đà Nẵng</b></p>
+        <div style="text-align: right;">
+            <img src="/Assignment/FPT_Polytechnic.png" style="width: 100px; height: 40px;">
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+    
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Tự động đổi ảnh sau 3 giây
+        }
+    
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+    
+        // Bắt đầu chạy slide khi tải trang
+        showSlides();
+    </script>
+    
+</body>
+</html>

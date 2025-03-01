@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3_PD12032</title>
+    <style>
+        .body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffeb3b;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .banner {
+            text-align: center;
+            background-color: #00bfa5;
+            padding: 30px;
+            color: white;
+        }
+        .nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .phancuoi {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .left-column {
+            background-color: #f4f4f4;
+            flex: 3;
+            padding: 10px 20px 10px 10px;
+        }
+        .gioithieu {
+            padding: 80px;
+            background-color: #A9A9A9;
+        }
+        .coban {
+            padding: 20px;
+            background-color: #A9A9A9;
+            margin:20px 10px 10px 0px;
+        }
+        .right-column {
+            background-color: white;
+            flex: 7;
+            padding: 10px;
+        }
+        .mota {
+            background-color: #A9A9A9;
+            padding: 80px;
+        }
+        .footer {
+            text-align: center;
+            background-color: lightgray;
+            padding: 20px;
+        }
+        @media screen and (max-width: 600px) {
+            .phancuoi .column {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="header"><b>Lê Hà Như Ý_PD12032</b></div>
+
+    <div class="banner">
+        <h1>My profile Website</h1>
+        <p>Created <b>by</b> Như Ý.</p>
+    </div>
+
+    <div class="nav">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <div class="phancuoi">
+        <div class="left-column">
+            <h2>Thông tin cơ bản</h2>
+            <p><b>Hình ảnh của tôi:</b></p>
+            <div class="gioithieu">Image</div>
+            <p>Một số thông tin về tôi...</p>
+
+            <h3>Thông tin cá nhân</h3>
+            <p>Một số thông tin cơ bản khác:</p>
+            <div class="coban">Quê quán</div>
+            <div class="coban">Ngày sinh</div>
+            <div class="coban">Học vấn</div>
+        </div>
+
+        <div class="right-column">
+            <div class="article">
+                <h2>Sở thích</h2>
+                <p><b>Thông tin này được cập nhật gần nhất vào ngày 18, tháng 01, năm 2025.</b></p>
+                <div class="mota">Image</div>
+                <p>- Tôi thích nấu ăn cho gia đình .</p>
+                <p>- Tôi thích nghe nhạc hằng ngày.</p>
+            </div>
+            <br><br>
+            <div class="article">
+                <h2>Kỹ năng</h2>
+                <p><b>Thông tin này được cập nhật gần nhất vào ngày 17, tháng 01, năm 2025.</b></p>
+                <div class="mota">Image</div>
+                    <p>- Lập trình: Ngôn ngữ C, JavaScript, Python,...</p>
+                    <p>- Quản lí thời gian.</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="footer"><b>Thanks for watching!</b></div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery_NhuYLeHa</title>
+</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            background-color: #999999;
+        }
+        /* Bọc toàn bộ gallery và video */
+        .container {
+            width: 1200px;
+            height: 1300px;
+            margin: auto;
+            background: #CCCCFF;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Video */
+        .video {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+<body>
+    <div class="container">
+        <h1>Gallery</h1>
+        <p>My picture</p>
+        <div class="gallery">
+            <div class="gallery-item"><img src="images/17.jpg" alt="Hình 1"></div>
+            <div class="gallery-item"><img src="images/20.jpg" alt="Hình 2"></div>
+            <div class="gallery-item"><img src="images/11.jpg" alt="Hình 3"></div>
+            <div class="gallery-item"><img src="images/16.jpg" alt="Hình 4"></div>
+        </div>
+
+        <div class="video-container">
+            <h2>Video Youtube</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EUGjrBnrheM?si=6PU3VDmvcgmt6yo6" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+            
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/K601I5gP0_I?si=ifnCcjxsI53C0rtD" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+    
+</body>
+</html>

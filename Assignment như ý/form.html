@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điền Form Thông Tin Cá Nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #999999;
+            margin: 20px;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: auto;
+            background: #CCCCFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: black;
+        }
+        label {
+            color: w;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 95%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+        input[type="checkbox"] {
+            width: auto;
+        }
+        input[type="color"] {
+            height: 30px;
+            border: none;
+        }
+        input[type="file"] {
+            border: none;
+        }
+        .slider {
+            width: 95%;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .buttons button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buttons :hover {
+            background-color: grey;
+            color: white;
+        }
+        .submit {
+            background-color: #66CCFF;
+            color: black;
+        }
+        .preview {
+            background-color: #66CCFF;
+            border: 1px solid #ccc;
+        }
+        /*Nút submit ẩn*/
+        form:invalid #submit {
+        pointer-events: none;
+        opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #333;">Form Thông Tin Cá Nhân</h1>
+        
+        <form>
+            <label for="name">Họ và Tên:</label>
+            <input type="text" id="name" placeholder="Nhập họ và tên của bạn" required>
+
+            <label for="gender">Giới tính:</label>
+            <select id="gender" style="width: 97%;" required>
+                <option>Chọn giới tính</option>
+                <option>Nam</option>
+                <option>Nữ</option>
+                <option>Khác</option>
+            </select>
+
+            <label for="date">Năm sinh:</label>
+            <input type="date" id="dateInput" required>
+
+            <label for="text">Trường đang học:</label>
+            <input type="text" id="textInput" placeholder="Nhập trường mà bạn đang học" required>
+
+            <label for="text">Mã sinh viên:</label>
+            <input type="text" id="textInput" placeholder="Nhập mã sinh viên của bạn" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="example@domain.com" required>
+
+            <label for="tel">Số điện thoại:</label>
+            <input type="tel" id="tel" placeholder="Nhập số điện thoại của bạn" required>
+
+            <label for="text">Quê quán:</label>
+            <input type="text" id="textInput" placeholder="Nhập quê quán của bạn" required>
+
+            <h3 style="color: #333;">Thông Tin Bổ Sung</h3>
+
+            <label for="color">Màu yêu thích:</label>
+            <input type="color" id="color" style="width: 97%;" required>
+
+            <label for="avatar">Ảnh đại diện:</label>
+            <input type="file" id="avatar" required>
+
+            <label for="job">Chuyên ngành:</label>
+            <input type="text" id="job" placeholder="Nhập chuyên ngành của bạn" required>
+
+            <label for="bio">Một số nét về bản thân bạn:</label>
+            <textarea id="bio" placeholder="Viết một vài dòng giới thiệu về bản thân..." required></textarea>
+
+            <label>
+                <input type="checkbox" required> Tôi xác nhận các thông tin trên là chính xác
+            </label>
+
+            <div class="buttons">
+                <button class="submit" type="submit">Gửi Thông Tin</button>
+                <button class="preview" type="button">Xem Trước</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

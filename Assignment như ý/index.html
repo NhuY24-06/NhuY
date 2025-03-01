@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index_NhuYLeHa</title>
+    <style>
+        .body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .header {
+            background-color: #999999;
+            text-align: center;
+            padding: 3px 0;
+            color:white;
+        }
+        .banner {
+            text-align: center;
+            background-color: #ccc;
+            padding: 0;
+            overflow: hidden; /* Tránh ảnh bị tràn */
+        }
+
+        .banner-img {
+            width: 100%; 
+            height: 300px; /* Cố định chiều cao */
+            object-fit: cover; /* Cắt ảnh để vừa khung mà không bị méo */
+            display: block;
+        }
+        
+        .nav {
+            background-color: #E6E6FA;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: #6699CC;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-top: 5px solid #FFFFCC;
+        }
+        .nav a:hover {
+            background-color: #CCCCFF;
+            color: white;
+            text-decoration: underline;
+        }
+        .phancuoi {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .left-column {
+            border-top: 5px solid #FFFFCC;
+            background-color: #999999	;
+            flex: 3;
+            padding: 10px 20px 10px 10px;
+        }
+        .gioithieu {
+            display: flex; /* Căn giữa ảnh */
+            justify-content: center;
+            align-items: center;
+            background: none; /* Xóa nền xám nếu có */
+        }
+
+        .gioithieu img {
+            width: 100%;  /* Ảnh sẽ tự động co giãn theo khung */
+            max-width: 100%; /* Đảm bảo ảnh không bị to hơn khung */
+            height: auto; /* Giữ tỷ lệ ảnh */
+            display: block;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gioithieu img:hover {
+            transform: scale(1.05); /* Hiệu ứng zoom khi di chuột vào */
+        }
+        .coban {
+            padding: 20px;
+            background-color: #CCFFCC;
+            margin:20px 10px 10px 0px;
+        }
+        .right-column {
+            border-top: 5px solid #FFFFCC;
+            background-color: #999999;
+            flex: 7;
+            padding: 20px;
+            margin-left: 1px;
+        }
+        .mota {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+        }
+        .footer {
+            text-align: left;
+            background-color: #999999;
+            padding: 20px;
+            width: 100%;
+            border-left: 10px solid #FFFFCC;
+            border-top: 5px solid #FFFFCC;
+            border-radius: 0px 0px 0px 10px;
+        }
+        @media screen and (max-width: 600px) {
+            .phancuoi .column {
+                flex: 100%;
+            }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .marquee-text {
+            font-size: 15px;
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+
+        /*Bài viết hiển thị chi tiết*/
+        details {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+        details[open] {
+            background-color: #333;
+        }
+
+        /*9 ảnh dạng grid*/
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột */
+            gap: 10px; /* Khoảng cách giữa các ảnh */
+            padding: 10px;
+            background-color: #999999;
+            border: 2px solid #FFFFCC;
+            margin: 10px 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            background-color: gray;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 200px; /* Đảm bảo kích thước đồng đều */
+            object-fit: cover; /* Cắt ảnh để vừa với khung */
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1); /* Hiệu ứng zoom khi di chuột vào */
+        }
+        iframe {
+            width: 100%;
+            height: 1500px;
+            min-height: 600px; /* Tăng chiều cao tối thiểu */
+            border: none;
+            overflow: auto;
+        }
+
+    </style>
+</head>
+<body class="body">
+    <div class="header"><b><p class="marquee-text" style="font-size: 25px;">"Cuộc sống là những chuyến đi, và chỉ có những ai dám đi xa mới biết được bao nhiêu điều có thể đạt được.</b></div>
+    <div class="banner">
+        <img src="images/5.jpg" alt="Banner" class="banner-img">
+    </div>
+    
+    <div class="nav">
+        <a href="Home.html" target="main">Trang chủ</a>
+        <a href="form.html" target="main">Thông tin</a>
+        <a href="blogs.html" target="main">Blogs</a>
+        <a href="ketqua.html" target="main">Kết quả học tập</a>
+        <a href="Gallery.html" target="main">Gallery</a>
+        <iframe src="Home.html" name="main"></iframe>
+    </div>
+
+
+
+    <div class="footer">
+        <h2>Liên hệ:</h2>
+        <p><b>Email:<a href="https://mail.google.com/mail/u/0/#inbox" style="color: white;"> nhuyleha06@gmail.com</a></b></p>
+        <p><b>SĐT: 0788552448</b></p>
+        <p><b>Địa chỉ: K342/120 Hoàng Văn Thái , Liên Chiểu, Đà Nẵng</b></p>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+    
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Tự động đổi ảnh sau 3 giây
+        }
+    
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+    
+        // Bắt đầu chạy slide khi tải trang
+        showSlides();
+    </script>
+    
+</body>
+</html>

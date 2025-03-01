@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+        }
+        /* Bọc toàn bộ gallery và video */
+        .container {
+            width: 800px;
+            margin: auto;
+            background: #FFCC99;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 15px;
+            padding: 20px;
+            background-color: #CCCCFF;
+            border-radius: 10px;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Video */
+        .video {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Gallery</h2>
+        <p>Một số hình ảnh đẹp:</p>
+        
+        <div class="gallery">
+            <div class="gallery-item"><img src="/Assignment/images/ảnh cá nhân 1.jpg" alt="Hình 1"></div>
+            <div class="gallery-item"><img src="/Assignment/images/ảnh cá nhân 2.jpg" alt="Hình 2"></div>
+            <div class="gallery-item"><img src="/Assignment/images/ảnh cá nhân 3.jpg" alt="Hình 3"></div>
+            <div class="gallery-item"><img src="/Assignment/images/ảnh cá nhân 4.jpg" alt="Hình 4"></div>
+        </div>
+
+        <div class="video-container">
+            <h2>Video Youtube</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zt-GmI3x-RE?si=UMxDvB1-VfXoZrPs" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+            
+            <br><br>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iS6NZ1kESxM?si=rXCDz5xD7Avolz2U" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+    
+</body>
+</html>

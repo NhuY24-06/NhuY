@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment WEB1013</title>
+    <style>
+        .body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color:#9966FF;
+        }
+        .header {
+            background-color: #339966;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .banner {
+            text-align: center;
+            background-color: #ccc;
+            color: white;
+            padding: 40px;
+        }
+        .banner-img {
+            width: 100%; 
+            height: auto;
+            object-fit: cover; 
+            max-height: 200px; 
+        }
+        .nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: #6699CC;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-top: 5px solid #996699;
+        }
+        .nav a:hover {
+            background-color: #CCCCFF;
+            color: white;
+        }
+        .phancuoi {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .left-column {
+            border: 5px solid #FFFFCC;
+            background-color: #CCFFFF;
+            flex: 3;
+            padding: 10px 20px 10px 10px;
+        }
+        .gioithieu {
+            display: flex; /* Căn giữa ảnh */
+            justify-content: center;
+            align-items: center;
+            background: none; /* Xóa nền xám nếu có */
+        }
+
+        .gioithieu img {
+            width: 100%;  /* Ảnh sẽ tự động co giãn theo khung */
+            max-width: 100%; /* Đảm bảo ảnh không bị to hơn khung */
+            height: auto; /* Giữ tỷ lệ ảnh */
+            display: block;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gioithieu img:hover {
+            transform: scale(1.05); /* Hiệu ứng zoom khi di chuột vào */
+        }
+        .coban {
+            padding: 20px;
+            background-color: #CCFFCC;
+            margin:20px 10px 10px 0px;
+        }
+        .right-column {
+            border: 5px solid #FFFFCC;
+            background-color: #EEEEEE;
+            flex: 7;
+            padding: 20px;
+            margin-left: 7px;
+        }
+        .mota {
+            width: 100%;
+            max-width: 100%;
+            display: block;
+        }
+        .footer {
+            text-align: left;
+            background-color: #CCCCFF;
+            padding: 20px;
+            width: 100%;
+            border-left: 10px solid #FFFFCC;
+            border-radius: 0px 0px 0px 10px;
+        }
+        @media screen and (max-width: 600px) {
+            .phancuoi .column {
+                flex: 100%;
+            }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .marquee-text {
+            font-size: 15px;
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+
+        /*Bài viết hiển thị chi tiết*/
+        details {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+        details[open] {
+            background-color: white;
+        }
+
+        /*9 ảnh dạng grid*/
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột */
+            gap: 10px; /* Khoảng cách giữa các ảnh */
+            padding: 10px;
+            background-color: #A9A9A9;
+            border: 5px solid pink;
+            margin: 10px 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            background-color: gray;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 200px; /* Đảm bảo kích thước đồng đều */
+            object-fit: cover; /* Cắt ảnh để vừa với khung */
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1); /* Hiệu ứng zoom khi di chuột vào */
+        }
+
+
+    </style>
+</head>
+<body class="body">
+    <div class="header"><b><p class="marquee-text" style="color: #333;">"Cuộc sống là những chuyến đi, và chỉ có những ai dám đi xa mới biết được bao nhiêu điều có thể đạt được.</b></div>
+    <div class="banner">
+        <img src="/Assignment/images/11.jpg" alt="Banner" class="banner-img">
+    </div>
+    
+    
+
+    <div class="nav">
+        <a href="/Assignment/Home.html">Trang chủ</a>
+        <a href="/Assignment/form.html">Thông tin</a>
+        <a href="/Assignment/blogs.html">Blogs</a>
+        <a href="/Assignment/ketqua.html">Kết quả học tập</a>
+        <a href="/Assignment/Gallery.html">Gallery</a>
+    </div>
+
+    <div class="phancuoi">
+        <div class="left-column">
+            <h2>Về tôi</h2>
+            <p><b>Hình ảnh của tôi:</b></p>
+            <div class="gioithieu">
+                <img src="/Assignment/images/17.jpg" alt="Ảnh của tôi" style="width: 100%; max-width: 400px;">
+            </div>
+            <p>Hải Châu, Đà Nẵng</p>
+
+            <h3>Gallery</h3>
+            <p>Một số hình ảnh:</p>
+            <div class="gallery">
+                <img src="/Assignment/images/11.jpg" alt="Hình 1">
+                <img src="/Assignment/images/12.jpg" alt="Hình 2">
+                <img src="/Assignment/images/13.jpg" alt="Hình 3">
+                <img src="/Assignment/images/14.jpg" alt="Hình 4">
+                <img src="/Assignment/images/15.jpg" alt="Hình 5">
+                <img src="/Assignment/images/16.jpg" alt="Hình 6">
+                <img src="/Assignment/images/17.jpg" alt="Hình 7">
+                <img src="/Assignment/images/18.jpg" alt="Hình 8">
+                <img src="/Assignment/images/20.jpg" alt="Hình 9">
+            </div> 
+        </div>
+
+        <div class="right-column">
+            <div class="article">
+                <h2>Động lực thúc đẩy ông Putin đề xuất hợp tác khoáng sản với Mỹ</h2>
+                <p><b>Thứ tư, 26/2/2025, 11:11 (GMT+7).</b></p>
+                <div class="mota">
+                    <img src="/Assignment/images/29.jpg" alt="Ảnh putin" style="width: 100%; height: auto;">
+                </div>
+                <details>
+                    <summary>Xem thêm...</summary>
+                    <p>- Ông Putin dường như muốn loại bỏ "át chủ bài" khoáng sản của Ukraine, khi tuyên bố Nga cũng sẵn sàng hợp tác với Mỹ khai thác nguồn tài nguyên này.</p>
+                        
+                    <p>- Tổng thống Vladimir Putin ngày 24/2 họp với các bộ trưởng và cố vấn kinh tế quốc gia để thảo luận về sản xuất đất hiếm, tài nguyên được mô tả là nguồn dự trữ chiến lược để phát triển kinh tế và duy trì sức cạnh tranh của Nga trong tương lai.</p>
+                </details>
+            </div>
+
+            <br>
+
+            <div class="article">
+                <h2>Một số nét về bản thân </h2>
+                <p><b>Thứ tư, 26/2/2025, 18:46 (GMT+7).</b></p>
+                <div class="mota">
+                <img src="/Assignment/images/31.jpg " alt="Ảnh chân dung" style="width: 400px; height: 535px;">
+            </div>
+            <details>
+                <summary>Xem thêm...</summary>
+                <p>Tôi tên là Lê Hà Như Ý, sinh ra và lớn lên tại Đà Nẵng, Hiện tại, tôi đang là sinh viên Cao Đẵng FPT Polytechnic. Từ nhỏ, tôi đã có đam mê, và niềm đam mê này đã thúc đẩy tôi theo đuổi chuyên ngành. Trong quá trình học tập và làm việc, tôi đã tích lũy được nhiều kinh nghiệm và kỹ năng quý báu.   
+                    Ngoài công việc, tôi rất thích đọc sách, du lịch. Tôi tin rằng việc duy trì và phát triển các sở thích cá nhân giúp tôi cân bằng cuộc sống và mở rộng tầm nhìn.
+                </p>
+            </details>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>Liên hệ:</h2>
+        <p><b>Email:<a href="https://mail.google.com/mail/u/0/#inbox" style="color: #9966FF;"> nhuyleha06@gmail.com</a></b></p>
+        <p><b>SĐT: 0788552448</b></p>
+        </b></p>
+        <p><b>Địa chỉ: K342/120 Hoàng Văn Thái , Liên Chiểu, Đà Nẵng</b></p>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+    
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Tự động đổi ảnh sau 3 giây
+        }
+    
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+    
+        // Bắt đầu chạy slide khi tải trang
+        showSlides();
+    </script>
+    
+</body>
+</html>

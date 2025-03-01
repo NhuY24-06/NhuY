@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab5_PD12032</title>
+</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .submit-btn {
+            background-color: lightgray; /* Màu nền ban đầu */
+            color: black; /* Màu chữ */
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Khi rê chuột vào nút */
+        .submit-btn:hover {
+            background-color: darkgray; /* Đổi sang màu xám đậm */
+        }
+    </style>
+<body>
+
+    <h1>Form Thông Tin Cá Nhân</h1>
+    <fieldset>
+        <legend><h3>Thông Tin Cá Nhân</h3></legend>
+        <form action="/submit" method="post" enctype="multipart/form-data"></form>
+        <label><b>Họ và Tên:</b></label>
+        <br>
+        <div>
+            <input
+                type="text"
+                id="textInput"
+                name="textInput"
+                placeholder="Nhập họ và tên của bạn" style="width: 400px;height: 25px;"
+            />
+        </div>
+        <br>
+        <label><b>Mật Khẩu:</b></label>
+        <br>
+        <div>
+            <input
+                type="password"
+                id="passwordInput"
+                name="passwordInput"
+                placeholder="Nhập mật khẩu" style="width: 400px;height: 25px;"
+            />
+        </div>
+        <br>
+        <label><b>Email:</b></label>
+        <br>
+        <div>
+            <input
+                type="email"
+                id="emailInput"
+                name="emailInput"
+                placeholder="example@domain.com" style="width: 500px;height: 35px;"
+            />
+        </div>
+        <br>
+        <label><b>Ngày sinh:</b></label>
+        <br>
+        <div>
+            <input 
+                type="date"
+                id="dateInput"
+                name="dateInput"
+                style="width: 600px;height: 35px;"
+            />
+        </div>
+        <br>
+        <label><b>Màu yêu thích:</b></label>
+        <br>
+        <div></div>
+            <input
+                type="color"
+                id="colorInput"
+                name="colorInput"
+                value="#00ffff"
+                style="width: 600px;height: 45px;"
+            />
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" id="agree">
+            <label for="agree"><b>Tôi đồng ý với các điều khoản</b></label>
+        </div>
+        <br>
+        <label><b>Ảnh đại diện:</b></label>
+        <div>
+            <input
+                type="file"
+            />
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend><h3>Thông Tin Bổ Sung</h3></legend>
+        <label><b>Mức độ hài lòng (0-100):</b></label>
+        <div>
+            <input
+                type="range"
+                id="rangeInput"
+                name="rangeInput"
+                min="0"
+                max="100"
+                value="70"
+                />
+                <span id="rangeValue">50</span>
+        </div>
+        <br>
+        <div>
+            <label for="gender"><b>Giới tính:</b></label>
+            <br>
+            <select id="gender" style="width: 400px;height: 25px;">
+                <option>Chọn giới tính</option>
+                <option>Nam</option>
+                <option>Nữ</option>
+                <option>Khác</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="job"><b>Nghề nghiệp:</b></label>
+            <br>
+            <input type="text" id="job" placeholder="Chọn hoặc nhập nghề nghiệp" style="width: 400px;height: 25px;">
+        </div>
+        <br>
+        <div>
+            <label for="bio"><b>Giới thiệu bản thân:</b></label>
+            <br>
+            <textarea id="bio" placeholder="Viết một vài dòng giới thiệu về bản thân..." style="width: 400px;height: 60px;"></textarea>
+        </div>
+    </fieldset>
+    <br>
+    <div class="buttons">
+        <button class="submit" type="submit">Gửi Thông Tin</button>
+        <button class="submit-btn" type="button">Submit</button>
+        <button class="preview" type="button">Xem Trước</button>
+    </div>
+</body>
+</html>
